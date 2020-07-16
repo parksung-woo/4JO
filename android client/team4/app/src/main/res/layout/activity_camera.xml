@@ -25,21 +25,23 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="146dp"
                     android:layout_height="75dp"
                     android:layout_marginRight="20dp"
                     android:background="@android:color/holo_blue_bright"
-                    android:text="메인화면"
+                    android:text="뒤로가기"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="146dp"
                     android:layout_height="75dp"
                     android:background="@android:color/holo_blue_bright"
-                    android:text="뒤로가기"
+                    android:text="메인화면"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" />/>
             </LinearLayout>
