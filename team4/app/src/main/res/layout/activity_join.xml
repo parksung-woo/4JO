@@ -32,25 +32,27 @@
         <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/et_id" android:text="이름을 입력해주세요" android:layout_weight="1" android:inputType="textPersonName" android:ems="10"/>
     </LinearLayout>
         -<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="horizontal">
+
         <TextView
             android:id="@+id/tv_pw"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="비밀번호"
+            android:text="@string/tv_pw"
             android:textSize="30sp" />
+
         <EditText
-            android:id="@+id/et_pw"
+            android:id="@string/et_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="*********" />
+            android:text="@string/et_pw" />
     </LinearLayout>
         -<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_pw"
+            android:id="@+id/tv_pw_pw"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
