@@ -11,13 +11,13 @@ class join_acticity : AppCompatActivity() {
         setContentView(R.layout.activity_join)
 
         //뒤로가기 버튼
-        button_send.setOnClickListener{
+        button_back.setOnClickListener{
             val intent = Intent(this, login_acticity::class.java) //LIstPageActivity로 이동
             startActivity(intent)
         }
 
         //회원가입 완료 버튼
-        button_del.setOnClickListener {
+        button_set.setOnClickListener {
             //if()
             val intent = Intent(this, login_acticity::class.java) //LIstPageActivity로 이동
             startActivity(intent)}
