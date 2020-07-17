@@ -3,6 +3,7 @@ package com.example.team4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_join.*
 
 class join_acticity : AppCompatActivity() {
@@ -18,9 +19,11 @@ class join_acticity : AppCompatActivity() {
 
         //회원가입 완료 버튼
         button_set.setOnClickListener {
-            //if()
+            Toast.makeText(this, "회원가입을 성공했습니다."
+                , Toast.LENGTH_SHORT).show()
             val intent = Intent(this, login_acticity::class.java) //LIstPageActivity로 이동
-            startActivity(intent)}
+            startActivity(intent)
+        }
 
     }
 }
