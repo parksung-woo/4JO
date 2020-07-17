@@ -18,7 +18,10 @@ class login_acticity : AppCompatActivity() {
             Log.i("testLog", edit_id.text.toString())
             Log.i("testLog", edit_pw.text.toString())
 
-            val inputId = edit_id.text.toString()
+            val intent = Intent(this,catagory_acticity ::class.java)
+            startActivity(intent)
+
+            /*val inputId = edit_id.text.toString()
             val inputPw = edit_pw.text.toString()
 
             if(inputId == "admin" && inputPw == "1234")//로그인이 성공했을 경우
@@ -28,7 +31,7 @@ class login_acticity : AppCompatActivity() {
                 startActivity(intent)
             }
             else Toast.makeText(this, "아이디와 비밀번호를 확인해주세요"
-                , Toast.LENGTH_SHORT).show()
+                , Toast.LENGTH_SHORT).show()*/
 
         }
         
