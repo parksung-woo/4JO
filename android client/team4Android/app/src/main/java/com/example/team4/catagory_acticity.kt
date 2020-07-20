@@ -15,7 +15,8 @@ class catagory_acticity : AppCompatActivity() {
         setContentView(R.layout.activity_catagory) //로그인 메인 페이지
 
         //로그아웃
-        button6.setOnClickListener {  }
+        button6.setOnClickListener {  val intent = Intent(this,login_acticity ::class.java)
+            startActivity(intent) }
 
         // 농장번호
         button7.setOnClickListener {
