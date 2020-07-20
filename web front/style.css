@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;  
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p{
+padding: 25px 50px 75px 100px;;
+}
+
+.member_list_wrap {
+    padding: 50px;
+}
+
+.member_list_head,
+.member_list_body >.item {
+    font-size: 0;
+}
+
+.member_list_head {
+    border-top: 2px solid green;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.member_list_body >.item {
+    border-bottom: 1px solid #ccc ;
+}
+
+.member_list_head > div,
+.member_list_body >.item > div {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.member_list_head > div {
+    font-weight: 600;
+}
+
+.member_list_head,
+.member_list_body >.item > div {
+    padding: 10px 0;
+}
+
+.member_list .num {
+    width: 10%
+}
+
+.member_list .id {
+    width: 20%
+}
+
+.member_list .name {
+    width: 20%
+}
+
+.member_list_body div.name {
+    text-align: left;
+}
+
+.member_list_body div.name a:hover {
+    text-decoration: underline;
+}
+
+.member_list .temp {
+    width: 15%
+}
+
+.member_list .humi {
+    width: 15%
+}
+
+.member_list .date {
+    width: 20%
+}
+
+/* paging */
+.paging {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.paging a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paging a.bt {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    background-image: url(../img/page_bt.png);
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    text-indent: -1000px;
+    overflow: hidden;
+}
+
+.paging a.bt:hover {
+    background-color: #999;
+}
+
+.paging a.first {
+    background-position: 10px -40px;
+}
+
+.paging a.prev {
+    margin-right: 5px;
+    background-position: 10px 10px;
+}
+
+.paging a.next {
+    margin-left: 5px;
+    background-position: -40px 10px;
+}
+
+.paging a.last {
+    background-position: -40px -40px;
+}
+
+.paging a.num {
+    margin: 0 5px;
+}
+
+.paging a.num.on {
+    color: green;
+}
+
+.paging a.num:hover {
+    text-decoration: underline;
+}
