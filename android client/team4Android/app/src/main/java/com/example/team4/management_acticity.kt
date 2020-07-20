@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_managment.*
 class management_acticity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_join)
+        setContentView(R.layout.activity_managment)
 
         //뒤로가기 버튼
         button5.setOnClickListener{

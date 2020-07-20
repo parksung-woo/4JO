@@ -15,6 +15,7 @@ class graph_acticity : AppCompatActivity() {
             val intent = Intent(this, management_acticity::class.java)
             startActivity(intent)
         }
+
         button14.setOnClickListener {
             val intent = Intent(this, catagory_acticity::class.java)
             startActivity(intent)

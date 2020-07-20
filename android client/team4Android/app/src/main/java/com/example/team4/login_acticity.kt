@@ -21,8 +21,7 @@ class login_acticity : AppCompatActivity() {
             val inputId = edit_id.text.toString()
             val inputPw = edit_pw.text.toString()
 
-            if(inputId == "admin" && inputPw == "1234")//로그인이 성공했을 경우
-            {
+            if(inputId == "admin" && inputPw == "1234"){ //로그인이 성공했을 경우
                 val intent = Intent(this,catagory_acticity ::class.java)
                 startActivity(intent)
             }

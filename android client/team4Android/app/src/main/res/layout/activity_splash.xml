@@ -8,32 +8,31 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="306dp"
-        android:layout_height="257dp"
+        android:layout_width="140dp"
+        android:layout_height="186dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="136dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="88dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/house" />
 
     <TextView
         android:id="@+id/startView"
-        android:layout_width="296dp"
-        android:layout_height="54dp"
+        android:layout_width="256dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="200dp"
         android:background="@drawable/house2"
         android:gravity="center"
         android:text="농장온습도센서_4조"
 
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.19" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
