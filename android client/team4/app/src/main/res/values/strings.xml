@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">team4</string>
-    <string name="button">로그인</string>
-    <string name="tv_pw">비밀번호</string>
-    <string name="tv_pwpw">비밀번호확인</string>
-    <string name="et_pw">******</string>
-
-</resources>

@@ -1,0 +1,10 @@
+.gradle
+.idea
+build
+
+###android Project gitlgnore###
+team4Android/.idea
+
+###spring Project gitlgnore###
+team4Spring/.idea
+team4Spring/.gradle
