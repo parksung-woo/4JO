@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_join.button
 import kotlinx.android.synthetic.main.activity_login.*
 
-class login_acticity : AppCompatActivity() {
+class login_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -22,7 +21,7 @@ class login_acticity : AppCompatActivity() {
             val inputPw = edit_pw.text.toString()
 
             if(inputId == "admin" && inputPw == "1234"){ //로그인이 성공했을 경우
-                val intent = Intent(this,catagory_acticity ::class.java)
+                val intent = Intent(this,catagory_activity ::class.java)
                 startActivity(intent)
             }
             else Toast.makeText(this, "아이디와 비밀번호를 확인해주세요"

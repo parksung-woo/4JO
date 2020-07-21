@@ -13,7 +13,7 @@ class join_acticity : AppCompatActivity() {
 
         //뒤로가기 버튼
         button_back.setOnClickListener{
-            val intent = Intent(this, login_acticity::class.java) //LIstPageActivity로 이동
+            val intent = Intent(this, login_activity::class.java) //LIstPageActivity로 이동
             startActivity(intent)
         }
 
@@ -21,7 +21,7 @@ class join_acticity : AppCompatActivity() {
         button_set.setOnClickListener {
             Toast.makeText(this, "회원가입을 성공했습니다."
                 , Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, login_acticity::class.java) //LIstPageActivity로 이동
+            val intent = Intent(this, login_activity::class.java) //LIstPageActivity로 이동
             startActivity(intent)
         }
 

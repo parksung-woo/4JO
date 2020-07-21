@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login_acticity"></activity>
+        <activity android:name=".login_activity"></activity>
         <activity android:name=".join_acticity"></activity>
-        <activity android:name=".catagory_acticity"></activity>
-        <activity android:name=".management_acticity"></activity>
-        <activity android:name=".graph_acticity"></activity>
-        <activity android:name=".camera_acticity"></activity>
+        <activity android:name=".catagory_activity"></activity>
+        <activity android:name=".management_activity"></activity>
+        <activity android:name=".graph_activity"></activity>
+        <activity android:name=".camera_activity"></activity>
     </application>
 
 </manifest>
