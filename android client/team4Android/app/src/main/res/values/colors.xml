@@ -16,8 +16,10 @@
         <color name="white1">#FFFFFF</color>
         <color name="gray1">#A6A6A6</color>
         <color name="gray2">#555555</color>
-        <color name="gray3">#777777</color>d
+        <color name="gray3">#777777</color>
 
-
+    <color name="colorPrimary2">#00cba9</color>
+    <color name="colorPrimaryDark2">#00cba9</color>
+    <color name="colorAccent2">#03DAC5</color>
 
 </resources>
