@@ -24,10 +24,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#9F248829"
+            android:elevation="15dp"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            android:elevation="15dp"/>
+            android:theme="?attr/actionBarTheme" />
 
         <TextView
             android:id="@+id/tv_title_info"
