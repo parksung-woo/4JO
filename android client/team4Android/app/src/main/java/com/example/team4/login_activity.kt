@@ -13,7 +13,7 @@ class login_activity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         //로그인 버튼 클릭
-        button.setOnClickListener{
+        button_login.setOnClickListener{
             Log.i("testLog", edit_id.text.toString())
             Log.i("testLog", edit_pw.text.toString())
 
@@ -29,9 +29,11 @@ class login_activity : AppCompatActivity() {
         }
         
         //회원가입 버튼 클릭
-        button2.setOnClickListener{
-            val intent = Intent(this, join_acticity::class.java)
+        button_register.setOnClickListener{
+            val intent = Intent(this,join_acticity ::class.java)
             startActivity(intent)
         }
+
+
     }
 }

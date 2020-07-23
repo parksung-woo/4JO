@@ -23,7 +23,7 @@ class management_activity : AppCompatActivity() {
         }
 
         //그래프버튼
-        button3.setOnClickListener {
+        button_login.setOnClickListener {
             val intent = Intent(this, graph_activity::class.java)
             startActivity(intent)
         }
