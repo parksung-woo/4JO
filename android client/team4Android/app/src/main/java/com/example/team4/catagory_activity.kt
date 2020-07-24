@@ -12,28 +12,36 @@ class catagory_activity : AppCompatActivity() {
 
         //로그아웃
 
-        button6.setOnClickListener {  val intent = Intent(this,login_activity ::class.java)
-            startActivity(intent) }
-
-        button6.setOnClickListener {
-            val intent = Intent(this,login_activity ::class.java)
-            startActivity(intent)
-        }
+//        button6.setOnClickListener {  val intent = Intent(this,login_activity ::class.java)
+//            startActivity(intent) }
+//
+//        button6.setOnClickListener {
+//            val intent = Intent(this,login_activity ::class.java)
+//            startActivity(intent)
+//        }
 
         // 농장번호
-        button7.setOnClickListener {
+        cardview1.setOnClickListener {
             val intent = Intent(this,management_activity ::class.java)
             startActivity(intent)
         }
-        button8.setOnClickListener {
+        cardview2.setOnClickListener {
             val intent = Intent(this,management_activity ::class.java)
             startActivity(intent)
         }
-        button9.setOnClickListener {
+        cardview3.setOnClickListener {
             val intent = Intent(this,management_activity ::class.java)
             startActivity(intent)
         }
-        button10.setOnClickListener {
+        cardview4.setOnClickListener {
+            val intent = Intent(this,management_activity ::class.java)
+            startActivity(intent)
+        }
+        cardview5.setOnClickListener {
+            val intent = Intent(this,management_activity ::class.java)
+            startActivity(intent)
+        }
+        cardview6.setOnClickListener {
             val intent = Intent(this,management_activity ::class.java)
             startActivity(intent)
         }

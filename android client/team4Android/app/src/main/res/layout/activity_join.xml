@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".MainActivity">
+    android:background="@color/white1"
+    android:orientation="vertical">
 
-    <View
-        android:id="@+id/topView"
-        android:layout_width="411dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/colorPrimary2"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:background="@drawable/ic_baseline_fiber_manual_record_24"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/looooooogo" />
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="110dp"
+            android:background="@drawable/ic_baseline_fiber_manual_record_24"
+            app:srcCompat="@drawable/looooooogo" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="440dp"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +42,7 @@
             android:paddingBottom="10dp"
 
             android:text="ID"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary2"
             android:textSize="20sp" />
 
         <EditText
@@ -60,52 +51,65 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:textSize="24sp" />
+            android:textSize="20dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimary2" />
-
-
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
+        android:layout_height="95dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-        <TextView
-            android:id="@+id/Input_name2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:drawableStart="@drawable/lock_24"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp"
+    <TextView
+        android:id="@+id/Input_name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:drawableStart="@drawable/lock_24"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
 
-            android:text="Password"
-            android:textColor="@color/colorAccent"
-            android:textSize="20sp" />
+        android:text="Password"
+        android:textColor="@color/colorPrimary2"
+        android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/edit_name2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="********"
-            android:textSize="24sp" />
+    <EditText
+        android:id="@+id/edit_name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@null"
+        android:hint="********"
+        android:textSize="20dp"
+        android:inputType="textPassword"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorPrimary2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary2" />
+
+        </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        >
         <TextView
             android:id="@+id/Input_name3"
             android:layout_width="match_parent"
@@ -116,7 +120,7 @@
             android:paddingBottom="10dp"
 
             android:text="Password Confirm"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary2"
             android:textSize="20sp" />
 
         <EditText
@@ -126,13 +130,29 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="********"
-            android:textSize="24sp" />
+            android:textSize="20dp"
+            android:inputType="textPassword"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimary2" />
 
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <TextView
             android:id="@+id/Input_name4"
@@ -144,7 +164,7 @@
             android:paddingBottom="10dp"
 
             android:text=" Nickname"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary2"
             android:textSize="20sp" />
 
         <EditText
@@ -153,28 +173,42 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:textSize="24sp" />
+            android:textSize="20dp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimary2" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_signup"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="45dp"
-        android:background="@drawable/round_bt"
-        android:text="Sign Up"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pw" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="212dp">
+
+            <Button
+                android:id="@+id/button_signup"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_bt"
+                android:text="Sign Up"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.195" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

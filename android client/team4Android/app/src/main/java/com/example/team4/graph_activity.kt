@@ -11,15 +11,15 @@ class graph_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph)
 
-        button_back.setOnClickListener {
-            val intent = Intent(this, management_activity::class.java)
-            startActivity(intent)
-        }
-
-        button14.setOnClickListener {
-            val intent = Intent(this, catagory_activity::class.java)
-            startActivity(intent)
-        }
+//        button_back.setOnClickListener {
+//            val intent = Intent(this, management_activity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        button14.setOnClickListener {
+//            val intent = Intent(this, catagory_activity::class.java)
+//            startActivity(intent)
+//        }
 
     }
 }

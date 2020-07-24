@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#455ACF"
+    android:background="#8BC34A"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -23,58 +23,56 @@
             android:layout_height="match_parent"
             android:background="@color/colorPrimary2">
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="13dp"
-                android:text="SAFE FARM"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/textView11"
-                app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="175dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="159dp"
-                android:text="당신의 농장을 안전하게"
-                android:textColor="#FAFBF8"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="264dp"
-                android:layout_height="222dp"
-                android:layout_marginTop="148dp"
-                android:layout_marginBottom="124dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="73dp"
+                android:layout_marginTop="216dp"
+                android:layout_marginEnd="73dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.514"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_fiber_manual_record_24" />
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="339dp"
-                android:layout_height="278dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="141dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="49dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView10"
+                android:layout_width="355dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="181dp"
+                android:layout_marginBottom="46dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/looooooogo" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="SAFE FARM"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="121dp"
+                android:text="당신의 농장을 안전하게"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

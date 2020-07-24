@@ -10,4 +10,6 @@
     <string name="tv_phone">전화번호</string>
     <string name="button_login">Login</string>
     <string name="button_signup">If you need to register, click here</string>
+    <string name="farmer_title">Johns Farm</string>
+    <string name="temperature">°C</string>
 </resources>
