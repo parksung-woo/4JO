@@ -14,7 +14,7 @@
         $(document).ready(function () {
             $("btnUpdate").click(function () {
                 if(confirm("수정 하시겠습니까?")){
-                    document.form02.action = "${path}/updateMember";
+                    document.form02.action = "${path}/memberList";
                     document.form02.submit();
                 }
             });
@@ -33,32 +33,31 @@
 </head>
 <body>
     <h2>회원 정보 상세 페이지</h2>
-    <form name="form02" method="post">
+    <form name="form02" method="post" action="/updateMember">
         <table border="1" width="400px">
             <tr>
                 <td>아이디</td>
-                <td><input name="member_id" value="${dto.member_id}" readonly="readonly"></td>
+                <td><input name="member_id" value="${list.member_id}" readonly="readonly"></td>
             </tr>
             <tr>
                 <td>비밀번호</td>
-                <td><input type="password" name="member_password"></td>
+                <td><input type="password" name="member_password" value="${list.member_password}"></td>
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input name="member_name" value="${dto.member_name}"></td>
+                <td><input name="member_name" value="${list.member_name}"></td>
             </tr>
             <tr>
                 <td>이메일</td>
-                <td><input name="member_email" value="${dto.member_email}"></td>
+                <td><input name="member_email" value="${list.member_email}"></td>
             </tr>
             <tr>
                 <td>전화번호</td>
-                <td><input name="member_phone" value="${dto.member_phone}"></td>
+                <td><input name="member_phone" value="${list.member_phone}"></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="button" value="수정" id="btnUpdate">
-                    <input type="button" value="삭제" id="btnDelete">
+                    <input type="submit" value="수정" id="btnUpdate" >
                 </td>
             </tr>
         </table>
