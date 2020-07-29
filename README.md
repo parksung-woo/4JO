@@ -1,5 +1,6 @@
 # 4JO
 4JO test
+
 프로젝트 개요 : 농장의 일은 온도와 습도같은 환경에 예민하게 반응한다.
                개발한 프로젝트의 어플리케이션으로 온도와 습도를 관련하여 농장을 편리하게 관리할 수 있도록 하기위해 제작을 결심했다.
                
@@ -26,7 +27,7 @@
                
       Local에서 돌리기 위한 메뉴얼
                   1. 안드로이드 App : android client 폴더 - team4Android 실행 (Size=Picel 3XL, Minimum SDK=API 22:Android 5.1(Lollipop)) 
-                  2. Spring boot: backend 폴더 - service 실행(intellij(Ultimate Version))
+                  2. Spring boot: backend 폴더 - service 실행(Intellij(Ultimate Version))
                     (본인의 AWS DB 주소 및 local ip주소 변경 후 RUN)
                   
                   
