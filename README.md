@@ -34,15 +34,15 @@
     #개발환경
         -Web
         * SERVER : TOMCAT 11.0
-        * DATABASE : MariaDB(AWS EC2 RDS생성)
+        * DATABASE : MariaDB 10.3.20(AWS EC2 RDS생성)
         * IDE : Intellij(Ultimate Version)
         * FrontEnd : Bootstrap, Javascript, HTML5, CSS3
-        * Language & Framework : Java, Spring boot
+        * Language & Framework : Java 8, Spring boot 2.3.1
 
         -App
         * Language & Framework : Kotlin , Anroid Studio
-        * DATABASE : MariaDB             
+        * DATABASE : MariaDB 10.3.20             
 
-        * Git & Sourcetree, Slack 메신저, oven 스토리 보드 활용
+        * Git(2.27.0) & Sourcetree, Slack 메신저, oven 스토리 보드 활용
 
-        * 라즈베리파이 3 Model
+        * 라즈베리파이 Model 3 B
