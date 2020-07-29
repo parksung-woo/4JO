@@ -45,4 +45,4 @@
 
         * Git & Sourcetree, Slack 메신저, oven 스토리 보드 활용
 
-        * 하드웨어 - 라즈베리파이 3 Model
+        * 라즈베리파이 3 Model
