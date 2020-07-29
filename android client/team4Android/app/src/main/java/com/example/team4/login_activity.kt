@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_join.*
 import kotlinx.android.synthetic.main.activity_login.*
+import java.net.HttpURLConnection
+import java.net.URL
+import java.net.URLEncoder
 
 class login_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,11 +18,8 @@ class login_activity : AppCompatActivity() {
 
         //로그인 버튼 클릭
         button_login.setOnClickListener{
-            Log.i("testLog", edit_id.text.toString())
-            Log.i("testLog", edit_pw.text.toString())
-
-            val inputId = edit_id.text.toString()
-            val inputPw = edit_pw.text.toString()
+            val inputId = login_id.text.toString()
+            val inputPw = login_password.text.toString()
 
             if(inputId == "admin" && inputPw == "1234"){ //로그인이 성공했을 경우
                 val intent = Intent(this,catagory_activity ::class.java)
@@ -26,6 +27,24 @@ class login_activity : AppCompatActivity() {
             }
             else Toast.makeText(this, "아이디와 비밀번호를 확인해주세요"
                 , Toast.LENGTH_SHORT).show()
+
+            var tmp: String = ""
+            Log.i("testLog", "loginclick u:${edit_id.text}p:${edit_password.text}")
+            Thread() {
+                tmp = UpdateMainLog1("${edit_id.text}", "${edit_password.text}")
+                var tmps: List<String> = tmp.split("@");
+                runOnUiThread {
+                    Log.i("testLog", "loginclick : ${tmp}")
+                    if ("${tmp}".equals("0실패")) {
+                        Log.i("testLog", "로그인실패")
+                        Toast.makeText(this, "로그인 실패.", Toast.LENGTH_SHORT).show()
+                    } else if ("${tmp}".equals("2성공")) {
+                        Log.i("testLog", "로그인성공")
+                        val intent = Intent(this, catagory_activity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }.start()
         }
         
         //회원가입 버튼 클릭
@@ -34,6 +53,17 @@ class login_activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
     }
+}
+
+fun UpdateMainLog1(member_id:String,member_password:String):String{
+    val url = URL("http://192.168.0.100:8383/androidLogin?member_id=${member_id}&member_password=${member_password}")
+    val conn = url.openConnection() as HttpURLConnection // casting
+    Log.i("testLog", "conn.responseCode : ${conn.responseCode}")
+    if(conn.responseCode == 200){
+        val txt = url.readText()
+        /*val arr = JSONArray(txt)
+        var item = arr*/
+        return "${txt}"
+    } else return "null"
 }
