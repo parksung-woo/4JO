@@ -27,14 +27,11 @@ public class MemberService {
     public static void updateMember(MemberDTO memberDTO){
         MemberRepository.updateMember(memberDTO);
     }
-
     //삭제
-    public static void deleteMember(String member_id){
-        MemberRepository.deleteMember(member_id);
-    }
-
+    public static void deleteMember(String member_id){ MemberRepository.deleteMember(member_id); }
     //가입
-    public static void insertMembver(MemberDTO memberDTO){
+    public static void insertMember(MemberDTO memberDTO){
         MemberRepository.insertMember(memberDTO);
     }
+
 }

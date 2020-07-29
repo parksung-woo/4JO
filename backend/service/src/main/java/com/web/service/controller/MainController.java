@@ -17,7 +17,7 @@ public class MainController {
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String login() {
-
+        logger.info("main 첫번째 화면 실행");
         return "main";
     }
 
@@ -26,7 +26,7 @@ public class MainController {
         String password = login.getPassword();
         //userid : admin password : 1234
         if(password.equals("1234")) {
-            logger.info("main 실행");
+            logger.info("main 로그인 후 실행");
             return "redirect:/memberList";
         }
         //로그인 실패시 전달 값

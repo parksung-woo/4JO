@@ -7,32 +7,30 @@
 <!-- mybatis에서는 무조건 namespace가 잇엉된다 -->
 <mapper namespace="web.service">
     <select id="selectMember" resultType="map">
-        SELECT member_id, member_password,
-                member_name, member_email,
-                member_phone
+        SELECT member_id, member_password, member_nickname
          FROM member_4JO
          ORDER BY member_id
     </select>
 
     <select id="selectMemberOne" resultType="com.web.service.model.MemberDTO" parameterType="String">
-        SELECT member_id, member_password,
-                member_name, member_email,
-                member_phone
+        SELECT member_id, member_password, member_nickname
          FROM member_4JO
          WHERE member_id = #{member_id}
     </select>
 
+    <select id="login" parameterType ="com.web.service.model.MemberDTO"
+            resultType="com.web.service.model.MemberDTO">
+        select * from member_4JO where member_id = #{member_id} and member_password = #{member_password};
+    </select>
+
     <insert id="insertMember" parameterType="com.web.service.model.MemberDTO">
-        INSERT INTO member_4JO(member_id, member_password,
-                                member_name, member_email,
-                                member_phone)
-        VALUES(#{member_id}, #{member_name}, #{member_password}, #{member_email}, #{member_phone})
+        INSERT INTO member_4JO(member_id, member_password, member_nickname)
+        VALUES(#{member_id}, #{member_nickname}, #{member_password})
     </insert>
     
     <update id="updateMember" parameterType="com.web.service.model.MemberDTO">
         UPDATE member_4JO
-        SET member_name = #{member_name}, member_password = #{member_password},
-            member_email = #{member_email}, member_phone=#{member_phone}
+        SET member_nickname = #{member_nickname}, member_password = #{member_password}
         WHERE member_id = #{member_id}
     </update>
     

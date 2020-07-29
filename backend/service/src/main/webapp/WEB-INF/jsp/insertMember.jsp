@@ -14,10 +14,8 @@
 <body>
     <form action="insertMember" method="post">
         아이디 : <input type="text" name="member_id"/><br/>
-        이름 : <input type="text" name="member_name"/><br/>
+        닉네임 : <input type="text" name="member_nickname"/><br/>
         비밀번호 : <input type="text" name="member_password"/><br/>
-        이메일 : <input type="text" name="member_email"/><br/>
-        휴대폰 번호 : <input type="text" name="member_phone"/><br/>
         <input type="submit" value="가입">
     </form>
 

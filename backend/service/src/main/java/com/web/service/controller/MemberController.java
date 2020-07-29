@@ -42,6 +42,7 @@ public class MemberController {
     //수정
     @RequestMapping(value = "/updateMember", method = RequestMethod.POST)
     public String updateMemberSubmit(@ModelAttribute MemberDTO memberDTO){
+        logger.info("updateMemberSubmit 실행");
         MemberService.updateMember(memberDTO);
         return "redirect:/memberList";
     }
@@ -49,20 +50,9 @@ public class MemberController {
     //삭제
     @RequestMapping("/deleteMember")
     public String deleteMember(@RequestParam("member_id") String member_id){
+        logger.info("deleteMember 실행");
         MemberService.deleteMember(member_id);
 
-        return "redirect:/memberList";
-    }
-
-    //가입화면?
-    @RequestMapping(value = "/insertMember", method = RequestMethod.GET)
-    public String insertMember(Model model){
-        model.addAttribute(new MemberDTO());
-        return "insertMember";
-    }
-    @RequestMapping(value = "/insertMember", method = RequestMethod.POST)
-    public String insertMember(@ModelAttribute MemberDTO memberDTO){
-        MemberService.insertMembver(memberDTO);
         return "redirect:/memberList";
     }
 

@@ -10,6 +10,7 @@ import java.util.Map;
 
 @Repository
 public class MemberRepository {
+
     //리스트
     public static List<Map<String, Object>> memberList(){
 
@@ -51,4 +52,12 @@ public class MemberRepository {
 
         session.commit();
     }
+    //로그인
+    public static MemberDTO login(MemberDTO memberDTO){
+        PoolManager manager = PoolManager.getInstance();
+        SqlSession session = manager.getSession();
+        return manager.getSession().selectOne("web.service.selectMemberOne", memberDTO);
+
+    }
+
 }

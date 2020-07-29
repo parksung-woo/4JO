@@ -45,15 +45,7 @@
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input name="member_name" value="${list.member_name}"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input name="member_email" value="${list.member_email}"></td>
-            </tr>
-            <tr>
-                <td>전화번호</td>
-                <td><input name="member_phone" value="${list.member_phone}"></td>
+                <td><input name="member_nickname" value="${list.member_nickname}"></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
