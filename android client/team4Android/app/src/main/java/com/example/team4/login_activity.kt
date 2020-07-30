@@ -21,24 +21,24 @@ class login_activity : AppCompatActivity() {
             val inputId = login_id.text.toString()
             val inputPw = login_password.text.toString()
 
-            if(inputId == "admin" && inputPw == "1234"){ //로그인이 성공했을 경우
-                val intent = Intent(this,catagory_activity ::class.java)
-                startActivity(intent)
-            }
-            else Toast.makeText(this, "아이디와 비밀번호를 확인해주세요"
-                , Toast.LENGTH_SHORT).show()
+//            if(inputId == "admin" && inputPw == "1234"){ //로그인이 성공했을 경우
+//                val intent = Intent(this,catagory_activity ::class.java)
+//                startActivity(intent)
+//            }
+//            else Toast.makeText(this, "아이디와 비밀번호를 확인해주세요"
+//                , Toast.LENGTH_SHORT).show()
 
             var tmp: String = ""
-            Log.i("testLog", "loginclick u:${edit_id.text}p:${edit_password.text}")
+            Log.i("testLog", "loginclick id:${login_id.text} pw:${login_password.text}")
             Thread() {
-                tmp = UpdateMainLog1("${edit_id.text}", "${edit_password.text}")
+                tmp = UpdateMainLog1("${login_id.text}", "${login_password.text}")
                 var tmps: List<String> = tmp.split("@");
                 runOnUiThread {
                     Log.i("testLog", "loginclick : ${tmp}")
-                    if ("${tmp}".equals("0실패")) {
+                    if ("${tmp}".equals("로그인 결과 : 0")) {
                         Log.i("testLog", "로그인실패")
                         Toast.makeText(this, "로그인 실패.", Toast.LENGTH_SHORT).show()
-                    } else if ("${tmp}".equals("2성공")) {
+                    } else if ("${tmp}".equals("로그인 결과 : 1")) {
                         Log.i("testLog", "로그인성공")
                         val intent = Intent(this, catagory_activity::class.java)
                         startActivity(intent)
