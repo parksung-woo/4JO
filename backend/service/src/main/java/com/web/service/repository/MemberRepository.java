@@ -55,7 +55,6 @@ public class MemberRepository {
     //로그인
     public static MemberDTO login(MemberDTO memberDTO){
         PoolManager manager = PoolManager.getInstance();
-        SqlSession session = manager.getSession();
         return manager.getSession().selectOne("web.service.selectMemberOne", memberDTO);
 
     }

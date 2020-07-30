@@ -12,11 +12,11 @@ public class LoginService {
     private static MemberRepository memberRepository;
 
     public static String Login(String member_id, String member_password) throws Exception{
-        MemberDTO login = new MemberDTO();
+        MemberDTO memberDTO = new MemberDTO();
         String loginsuccess = "0";
-        login.setMember_id(member_id);
-        login.setMember_password(member_password);
-        if(memberRepository.login(login)!=null){
+        memberDTO.setMember_id(member_id);
+        memberDTO.setMember_password(member_password);
+        if(memberRepository.login(memberDTO)!=null){
             loginsuccess = "1";
         }
 
