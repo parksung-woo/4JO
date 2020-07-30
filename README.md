@@ -40,7 +40,7 @@
         * Language & Framework : Java 8, Spring boot 2.3.1
 
         -App
-        * Language & Framework : Kotlin , Anroid Studio
+        * Language & Framework : Kotlin , Anroid Studio(compileSdkVersion 30, minSdkVersion 22)
         * DATABASE : MariaDB 10.3.20             
 
         * Git(2.27.0) & Sourcetree, Slack 메신저, oven 스토리 보드 활용
