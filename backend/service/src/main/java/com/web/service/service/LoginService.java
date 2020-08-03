@@ -16,7 +16,8 @@ public class LoginService {
         String loginsuccess = "0";
         memberDTO.setMember_id(member_id);
         memberDTO.setMember_password(member_password);
-        if(memberRepository.login(memberDTO)!=null){
+        System.out.println("로그인 정보"+memberRepository.login(memberDTO));
+        if(memberRepository.login(memberDTO).getMember_id()!=null){
             loginsuccess = "1";
         }
 

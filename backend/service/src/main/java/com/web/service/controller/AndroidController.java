@@ -20,13 +20,15 @@ public class AndroidController {
     @Setter(onMethod_ = {@Autowired})
     private MemberService memberService;
 
+    @Autowired
+    LoginService loginService;
 
 
     @GetMapping("/androidLogin")
     public String androidLogin(String member_id, String member_password) throws Exception{
         log.info("androidLogin 실행");
         // 0이면 실패 1이면 성공
-        String log = "로그인 결과 : " + LoginService.Login(member_id,member_password);
+        String log = "로그인 결과 : " + loginService.Login(member_id,member_password);
 
         return log;
     }

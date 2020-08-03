@@ -72,20 +72,18 @@ class join_acticity : AppCompatActivity() {
             }.start()
         } // end setOnClickListener
     }
+    fun UpdateMainLog(member_id:String,member_password:String, member_nickname:String):String{
+        var se=  URLEncoder.encode(member_nickname, "UTF-8");
+        val url = URL("http://192.168.0.100:8383/androidInsert?member_id=${member_id}&member_password=${member_password}" +
+                "&member_nickname=${member_nickname}")
+        val conn = url.openConnection() as HttpURLConnection // casting
+        Log.i("testLog", "conn.responseCode : ${conn.responseCode}")
+        if(conn.responseCode == 200){
+            val txt = url.readText()
+            /*val arr = JSONArray(txt)
+            var item = arr*/
+            return "${txt}"
+        } else return "null"
+    }
+
 }
-
-fun UpdateMainLog(member_id:String,member_password:String, member_nickname:String):String{
-    var se=  URLEncoder.encode(member_nickname, "UTF-8");
-    val url = URL("http://192.168.0.100:8383/androidInsert?member_id=${member_id}&member_password=${member_password}" +
-            "&member_nickname=${member_nickname}")
-    val conn = url.openConnection() as HttpURLConnection // casting
-    Log.i("testLog", "conn.responseCode : ${conn.responseCode}")
-    if(conn.responseCode == 200){
-        val txt = url.readText()
-        /*val arr = JSONArray(txt)
-        var item = arr*/
-        return "${txt}"
-    } else return "null"
-}
-
-
