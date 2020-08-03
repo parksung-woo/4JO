@@ -57,6 +57,23 @@ class login_activity : AppCompatActivity() {
         }
 
     }
+<<<<<<< HEAD
+=======
+
+    var lastTimeBackPressed : Long = 0
+    override fun onBackPressed() {
+        if(System.currentTimeMillis() - lastTimeBackPressed >= 1500){
+            lastTimeBackPressed = System.currentTimeMillis()
+            Toast.makeText(this,"'뒤로' 버튼을 한번 더 누르시면 종료됩니다.",Toast.LENGTH_LONG).show() }
+        else {
+            ActivityCompat.finishAffinity(this)
+            System.runFinalization()
+            System.exit(0)
+        }
+    }
+
+}
+>>>>>>> 44aebdd108e783ce3409b025b4309e9d1c453113
 
     fun UpdateMainLog1(member_id:String,member_password:String):String{
         val url = URL("http://192.168.0.100:8383/androidLogin?member_id=${member_id}&member_password=${member_password}")
