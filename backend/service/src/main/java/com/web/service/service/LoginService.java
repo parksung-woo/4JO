@@ -3,10 +3,12 @@ package com.web.service.service;
 import com.web.service.model.MemberDTO;
 import com.web.service.repository.MemberRepository;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class LoginService {
     @Setter(onMethod_ = {@Autowired})
     private static MemberRepository memberRepository;
@@ -16,8 +18,12 @@ public class LoginService {
         String loginsuccess = "0";
         memberDTO.setMember_id(member_id);
         memberDTO.setMember_password(member_password);
-        System.out.println("로그인 정보"+memberRepository.login(memberDTO));
-        if(memberRepository.login(memberDTO).getMember_id()!=null){
+        log.info("안드로이드에서 들어온 값 :" + member_id);
+        log.info("안드로이드에서 들어온 값 :" + member_password);
+        log.info("로그인 정보 : " + memberRepository.login(memberDTO));
+        if(memberRepository.login(memberDTO) == null){
+            loginsuccess = "0";
+        }else if(memberRepository.login(memberDTO)     !=null){
             loginsuccess = "1";
         }
 
