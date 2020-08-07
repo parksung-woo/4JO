@@ -47,7 +47,6 @@
             android:layout_marginTop="10dp"
             android:background="@null"
             android:inputType="text"
-            android:maxLength="10"
             android:textSize="20dp"
             android:hint="Maximum 10characters"/>
     </LinearLayout>
@@ -174,7 +173,6 @@
             android:background="@null"
             android:inputType="text"
             android:textSize="20dp"
-            android:maxLength="4"
             android:hint="Maximum 3characters"/>
     </LinearLayout>
     <View

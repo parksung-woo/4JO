@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_catagory.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 class catagory_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,11 @@ class catagory_activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        //회원가입 버튼 클릭
+        button_logout.setOnClickListener{
+            val intent = Intent(this,login_activity::class.java)
+            startActivity(intent)
+        }
 
     }
     var lastTimeBackPressed : Long = 0

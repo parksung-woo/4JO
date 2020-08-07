@@ -20,6 +20,17 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/button_logout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:background="@drawable/round_bt"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

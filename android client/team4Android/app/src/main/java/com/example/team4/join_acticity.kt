@@ -3,13 +3,16 @@ package com.example.team4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputFilter
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_catagory.*
 import kotlinx.android.synthetic.main.activity_join.*
 import kotlinx.android.synthetic.main.activity_login.*
 import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
+import java.util.regex.Pattern
 
 class join_acticity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +74,34 @@ class join_acticity : AppCompatActivity() {
                 }
             }.start()
         } // end setOnClickListener
+
+
+//아이디 정규식
+        edit_id.filters = arrayOf(InputFilter { source, _, _, _, _, _ ->
+            val ps: Pattern =
+                Pattern.compile("^[a-zA-Z0-9가\\u318D\\u119E\\u11A2\\u2022\\u2025a\\u00B7\\uFE55]+$")
+            if (source == "" || ps.matcher(source).matches()) {
+                return@InputFilter source
+            }
+            Toast.makeText( this, "영문, 숫자만 입력 가능합니다.", Toast.LENGTH_SHORT).show()
+            ""
+        }, InputFilter.LengthFilter(10))
+
+
+        //닉네임 정규식
+        edit_nickname.filters = arrayOf(InputFilter { source, _, _, _, _, _ ->
+            val ps: Pattern =
+                Pattern.compile("^[9가-힣ㄱ-ㅎㅏ-ㅣ\\u318D\\u119E\\u11A2\\u2022\\u2025a\\u00B7\\uFE55]+$")
+            if (source == "" || ps.matcher(source).matches()) {
+                return@InputFilter source
+            }
+            Toast.makeText( this, "한글만 입력 가능합니다.", Toast.LENGTH_SHORT).show()
+            ""
+        }, InputFilter.LengthFilter(3))
+
+
+
+    }
     }
     fun UpdateMainLog(member_id:String,member_password:String, member_nickname:String):String{
 //        var se=  URLEncoder.encode(member_nickname, "UTF-8");
@@ -87,4 +118,4 @@ class join_acticity : AppCompatActivity() {
             return "null"
     }
 
-}
+
