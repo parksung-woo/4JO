@@ -36,11 +36,20 @@ public class AndroidController {
     public String androidInsert(@RequestParam String member_id, @RequestParam String member_nickname,
                                 @RequestParam String member_password) throws Exception{
         log.info("androidInsert 실행");
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setMember_id(member_id);
-        memberDTO.setMember_nickname(member_nickname);
-        memberDTO.setMember_password(member_password);
-        memberService.insertMember(memberDTO);
+        if(member_id != "" && member_password != "" && member_nickname != ""){
+            MemberDTO memberDTO = new MemberDTO();
+            memberDTO.setMember_id(member_id);
+            memberDTO.setMember_nickname(member_nickname);
+            memberDTO.setMember_password(member_password);
+            log.info("아이디 : "+member_id);
+            log.info("비밀번호 : "+member_password);
+            log.info("닉네임 : "+member_nickname);
+            memberService.insertMember(memberDTO);
+        }
+        else{
+            log.info("널값들어감");
+        }
+        
         return "androidClose";
     }
 

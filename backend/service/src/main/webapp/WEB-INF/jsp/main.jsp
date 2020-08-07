@@ -16,6 +16,7 @@
 </div>
 <div class="form" style="margin-left: 500px" >
     <form action="login" method="post" class="register-form">
+        <input type="text" name="id" placeholder="id"/>
         <input type="password" name="password" placeholder="비밀번호"/>
         <input type="submit" value="로그인"/>
     </form>

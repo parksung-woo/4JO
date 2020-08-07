@@ -25,7 +25,7 @@
 
     <insert id="insertMember" parameterType="com.web.service.model.MemberDTO">
         INSERT INTO member_4JO(member_id, member_password, member_nickname)
-        VALUES(#{member_id}, #{member_nickname}, #{member_password})
+        VALUES(#{member_id}, #{member_password}, #{member_nickname})
     </insert>
     
     <update id="updateMember" parameterType="com.web.service.model.MemberDTO">
