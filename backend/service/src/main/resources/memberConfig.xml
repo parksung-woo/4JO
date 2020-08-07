@@ -21,6 +21,8 @@
 
     <mappers>
         <mapper resource="memberMapper.xml"/>
+        <mapper resource="ondoMapper.xml"/>
+        <mapper resource="sensorMapper.xml"/>
     </mappers>
 
 </configuration>

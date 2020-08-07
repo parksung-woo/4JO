@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mybatis에서는 무조건 namespace가 잇엉된다 -->
+<mapper namespace="web.service">
+    <select id="selectOndo" resultType="map">
+        SELECT temperature, humidity, nowDatetime
+        FROM ondo_4JO
+        ORDER BY nowDatetime
+        DESC LIMIT 1;
+    </select>
+
+    <insert id="insertOndo" parameterType="com.web.service.model.OndoDTO">
+        INSERT INTO ondo_4JO(temperature, humidity, nowDatetime)
+        VALUES(#{temperature}, #{humidity}, #{nowDatetime})
+    </insert>
+
+</mapper>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">team4</string>
+    <string name="button">로그인</string>
+    <string name="button_back">뒤로가기</string>
+    <string name="tv_id">ID</string>
+    <string name="tv_password">PASSWORD</string>
+    <string name="tv_password_confirm">비밀번호확인</string>
+    <string name="tv_name">이름</string>
+    <string name="tv_email">이메일</string>
+    <string name="tv_phone">전화번호</string>
+    <string name="button_login">Login</string>
+    <string name="button_signup">If you need to register, click here</string>
+    <string name="farmer_title">Johns Farm</string>
+    <string name="temperature">°C</string>
+</resources>

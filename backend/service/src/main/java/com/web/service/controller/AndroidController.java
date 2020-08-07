@@ -2,6 +2,7 @@ package com.web.service.controller;
 
 
 import com.web.service.model.MemberDTO;
+import com.web.service.model.SensorDTO;
 import com.web.service.service.LoginService;
 import com.web.service.service.MemberService;
 import lombok.Setter;
@@ -18,7 +19,7 @@ public class AndroidController {
     @Setter(onMethod_ = {@Autowired})
     private MemberService memberService;
 
-    @Autowired
+    @Setter(onMethod_ = {@Autowired})
     LoginService loginService;
 
 

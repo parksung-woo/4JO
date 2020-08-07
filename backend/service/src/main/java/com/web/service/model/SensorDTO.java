@@ -7,7 +7,6 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class MainDTO {
-    private String id;
-    private String password;
+public class SensorDTO {
+    private String sensor;
 }

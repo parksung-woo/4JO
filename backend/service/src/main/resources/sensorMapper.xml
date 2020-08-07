@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mybatis에서는 무조건 namespace가 잇엉된다 -->
+<mapper namespace="web.service">
+    <select id="selectSensor" resultType="map">
+        SELECT *
+        FROM sensor_4JO
+        ORDER BY sensorDate
+        DESC LIMIT 1;
+    </select>
+
+    <insert id="insertSensor" parameterType="com.web.service.model.SensorDTO">
+        INSERT INTO sensor_4JO(sensor)
+        VALUES(#{sensor})
+    </insert>
+
+</mapper>
