@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/title_catagory"
         android:layout_width="203dp"
-        android:layout_height="69dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:text="John's Farm"
@@ -23,13 +23,14 @@
     <Button
         android:id="@+id/button_logout"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="280dp"
         android:background="@drawable/round_bt"
         android:text="Logout"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <GridLayout
         android:layout_width="match_parent"

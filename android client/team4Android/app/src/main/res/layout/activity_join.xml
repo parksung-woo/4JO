@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
         <TextView
             android:id="@+id/Input_name"
             android:layout_width="match_parent"
@@ -39,16 +40,32 @@
             android:text="ID"
             android:textColor="@color/colorPrimary2"
             android:textSize="20sp" />
-        <EditText
-            android:id="@+id/edit_id"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@null"
-            android:inputType="text"
-            android:textSize="20dp"
-            android:hint="Maximum 10characters"/>
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_id"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:hint="Maximum 10characters"
+                android:inputType="text"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="id중복확인"
+                android:textSize="12dp" />
+        </LinearLayout>
+
     </LinearLayout>
     <View
         android:layout_width="match_parent"

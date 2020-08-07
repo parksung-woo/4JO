@@ -1,9 +1,11 @@
 package com.example.team4
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_catagory.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -49,12 +51,31 @@ class catagory_activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //회원가입 버튼 클릭
-        button_logout.setOnClickListener{
-            val intent = Intent(this,login_activity::class.java)
-            startActivity(intent)
-        }
+        //로그아웃 버튼 다이얼로그 구현
+        button_logout.setOnClickListener { view ->
+            var dialog = AlertDialog.Builder(this)
+            dialog.setTitle("로그아웃을 하시겠습니까?")
+            dialog.setMessage("저희 SAFE FARM을 이용해주셔서 감사합니다.")
+            dialog.setIcon(R.drawable.icon5)
 
+
+            fun toast_p() {
+                Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,login_activity::class.java)
+                    startActivity(intent)
+            }
+            var dialog_listener = object: DialogInterface.OnClickListener{
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    when(which){
+                        DialogInterface.BUTTON_POSITIVE ->
+                            toast_p()
+                    }
+                }
+            }
+            dialog.setPositiveButton("YES",dialog_listener)
+            dialog.setNegativeButton("NO",null)
+            dialog.show()
+        }
     }
     var lastTimeBackPressed : Long = 0
     override fun onBackPressed() {

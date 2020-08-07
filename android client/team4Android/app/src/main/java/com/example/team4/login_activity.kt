@@ -38,7 +38,7 @@ class login_activity : AppCompatActivity() {
                         if ("${tmp}".equals("로그인 결과 : 0")) { //"로그인 결과 : 0" -> backend에서의 응답
                             Log.i("testLog", "로그인실패")
                             Toast.makeText(this, "로그인 실패.", Toast.LENGTH_SHORT).show()
-                            
+
                         } else if ("${tmp}".equals("로그인 결과 : 1")) {
                             Log.i("testLog", "로그인성공")
                             Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
@@ -49,14 +49,23 @@ class login_activity : AppCompatActivity() {
                 }.start()
             }
         }
-        
+
         //회원가입 버튼 클릭
         button_register.setOnClickListener{
             val intent = Intent(this,join_acticity ::class.java)
             startActivity(intent)
         }
 
+        //이미지 버튼 클릭시 인사
+        imageView8.setOnClickListener {
+            Toast.makeText(
+                this, "hi 농부"
+                , Toast.LENGTH_SHORT
+            ).show()
+        }
+
     }
+
 
 
     fun UpdateMainLog1(member_id:String,member_password:String):String{
@@ -71,6 +80,7 @@ class login_activity : AppCompatActivity() {
         } else return "null"
     }
 
+    //두번 뒤로가면  앱 나가기
     var lastTimeBackPressed : Long = 0
     override fun onBackPressed() {
         if(System.currentTimeMillis() - lastTimeBackPressed >= 1500){
@@ -83,6 +93,5 @@ class login_activity : AppCompatActivity() {
         }
     }
 }
-
 
 
