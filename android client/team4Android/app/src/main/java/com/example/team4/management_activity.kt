@@ -57,12 +57,6 @@ class management_activity : AppCompatActivity() {
 
         }
 
-        //농장확인버튼 >> 카메라화면
-        cameraview.setOnClickListener {
-            val intent = Intent(this, camera_activity::class.java)
-            startActivity(intent)
-        }
-
         //그래프버튼
         graphview.setOnClickListener {
             val intent = Intent(this, graph_activity::class.java)

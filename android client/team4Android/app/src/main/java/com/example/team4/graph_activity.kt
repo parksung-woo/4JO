@@ -1,8 +1,10 @@
 package com.example.team4
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
 import kotlinx.android.synthetic.main.activity_graph.*
 
 
@@ -11,15 +13,10 @@ class graph_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph)
 
-//        button_back.setOnClickListener {
-//            val intent = Intent(this, management_activity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        button14.setOnClickListener {
-//            val intent = Intent(this, catagory_activity::class.java)
-//            startActivity(intent)
-//        }
+        button_graph.setOnClickListener {
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.0.100:8383/graph"))
+            startActivity(intent)
+        }
 
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -112,6 +112,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
                     android:text="@string/temperature"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -155,7 +156,7 @@
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp"
-                app:layout_column="2"
+                app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="0"
@@ -199,7 +200,7 @@
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp"
-                app:layout_column="1"
+                app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="0"
@@ -215,19 +216,12 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/photo" />
+                        android:src="@drawable/icon5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="---"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="camera"
+                        android:text="safe\nfarm"
                         android:textAlignment="center"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -255,10 +249,10 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/humidity" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/humidity" />
 
                     <TextView
                         android:id="@+id/id_humidity"
@@ -268,12 +262,12 @@
                         android:textAlignment="center"
                         android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="humidity"
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="humidity"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.gridlayout.widget.GridLayout>
