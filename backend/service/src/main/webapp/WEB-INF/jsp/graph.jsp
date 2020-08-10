@@ -69,12 +69,9 @@
                 {
 
                     label : "온도 그래프",
-                    fillColor : "rbga(185,238,255,0.2)",
-                    strokeColor : "rbga(185,238,255,1)",
-                    pointColor : "rbga(185,238,255,1)",
-                    pointStrokeColor : "#FAED7D",
-                    pointHighlightFill : "#FAED7D",
-                    pointHighlightStroke : "rbga(185,238,255,1)",
+                    fill: true,
+                    backgroundColor : "rgba(255,167,167,0.2)",
+                    borderColor : "rgb(255,167,167)",
                     data : chartData
 
                 }
@@ -137,12 +134,9 @@
                 {
 
                     label : "습도 그래프",
-                    fillColor : "rbga(151,187,205,0.2)",
-                    strokeColor : "rbga(151,187,205,1)",
-                    pointColor : "rbga(151,187,205,1)",
-                    pointStrokeColor : "fff#",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rbga(151,187,205,1)",
+                    fill: true,
+                    backgroundColor : "rgba(185,238,255,0.2)",
+                    borderColor : "rgb(185,238,255)",
                     data : humidityData
 
                 }
