@@ -10,31 +10,64 @@
 <head>
     <title>회원정보 상세</title>
     <%@ include file="memberHeader.jsp"%>
-    <script>
-        $(document).ready(function () {
-            $("btnUpdate").click(function () {
-                if(confirm("수정 하시겠습니까?")){
-                    document.form02.action = "${path}/memberList";
-                    document.form02.submit();
-                }
-            });
+    <style>
+        body{
+            background-image: url("asset/css/images/green.jpg");
+            height: 95%;
+            width: 99%;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+        .boby{
+            width: 380px;
+            height: 480px;
+            position: relative;
+            margin: 6% auto;
+            background: #fafafa;
+            padding: 5px;
+            overflow: hidden;
+            border-radius: 2em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+        .form_body{
+            width: 400px;
+            height: 500px;
+        }
+        h2{
+            text-align: center;
+            color: green;
+        }
+        table {
+            width: 100%;
+            margin-top: 50px;
+            border-top: 3px solid green;
+            border-collapse: collapse;
+        }
+        tr,th{
+            border-bottom: 1px solid #999999;
+            text-align: center;
+        }
+        tr{
+            margin-bottom: 100px;
+        }
+        #back{
+            margin-right: 10px;
+        }
+        img{
+            margin-top: 10px;
+            width: 380px;
+            height: 250px;
+            border-radius: 10px;
 
-        });
-        $(document).ready(function () {
-            $("btnDelete").click(function () {
-                if(confirm("삭제 하시겠습니까?")){
-                    document.form02.action = "${path}/deleteMember";
-                    document.form02.submit();
-                }
-            });
-
-        });
-    </script>
+        }
+    </style>
 </head>
 <body>
+<div class ="boby">
     <h2>회원 정보 상세 페이지</h2>
-    <form name="form02" method="post" action="/updateMember">
-        <table border="1" width="400px">
+    <form class="form_body" name="form02" method="post" action="/updateMember">
+        <table>
             <tr>
                 <td>아이디</td>
                 <td><input name="member_id" value="${list.member_id}" readonly="readonly"></td>
@@ -48,11 +81,16 @@
                 <td><input name="member_nickname" value="${list.member_nickname}"></td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
+                <td colspan="5" align="center">
+                    <input type="submit" value="이전" id="back" href="memberlist.jsp" >
                     <input type="submit" value="수정" id="btnUpdate" >
                 </td>
             </tr>
         </table>
+        <div>
+            <img src="./asset/css/images/bob.png"/>
+        </div>
     </form>
+</div>
 </body>
 </html>

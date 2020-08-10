@@ -7,8 +7,10 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,13 @@ public class OndoController {
 
     @Setter(onMethod_ = {@Autowired})
     private OndoService ondoService;
+
+    @RequestMapping("/selectOndoList")
+    public List<Map<String, Object>> selectOndoList() throws Exception{
+        log.info("selectOndoList 실행");
+        log.info(String.valueOf(ondoService));
+        return ondoService.selectOndoList();
+    }
 
     //안드로이드로 온습도 값 보냄
     @GetMapping( value = "/ondoPrint" )

@@ -2,6 +2,7 @@ package com.web.service.controller;
 
 import com.web.service.model.MemberDTO;
 import com.web.service.service.MemberService;
+import com.web.service.service.OndoService;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ public class MemberController {
 
     @Setter(onMethod_ = {@Autowired})
     private MemberService memberService;
+    @Setter(onMethod_ = {@Autowired})
+    private OndoService ondoService;
 
     //리스트
     @RequestMapping("/memberList")
@@ -28,6 +31,7 @@ public class MemberController {
         log.info("memberList 실행");
         ModelAndView mv = new ModelAndView();
         mv.addObject("result", memberService.memberList());
+        mv.addObject("resultOndo", ondoService.selectOndoList());
         mv.setViewName("memberList");
         return mv;
     }

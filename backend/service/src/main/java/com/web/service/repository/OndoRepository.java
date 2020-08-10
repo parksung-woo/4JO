@@ -19,6 +19,12 @@ public class OndoRepository {
         return manager.getSession().selectList("web.service.selectOndo");
     }
 
+    public static List<Map<String, Object>> selectOndoList(){
+
+        PoolManager manager = PoolManager.getInstance();
+        return manager.getSession().selectList("web.service.selectOndoList");
+    }
+
     //라즈베리 데이터 넣기
     public static void insertOndo(OndoDTO ondoDTO){
         PoolManager manager = PoolManager.getInstance();

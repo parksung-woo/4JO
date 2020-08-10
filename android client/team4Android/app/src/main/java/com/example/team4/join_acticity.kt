@@ -9,6 +9,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_catagory.*
 import kotlinx.android.synthetic.main.activity_join.*
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_management.*
+import org.json.JSONArray
+import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
@@ -24,6 +27,19 @@ class join_acticity : AppCompatActivity() {
         if (intent.hasExtra("infoss")) {
             tmp = intent.getStringExtra("infoss")
             infos = tmp?.split("@")
+        }
+
+        button3.setOnClickListener{
+
+                var id_check = idCheck()
+                var id_in = edit_id.text.toString()
+                if(id_check.equals(id_in)){
+                    Toast.makeText(this, "아이디가 중복됩니다.", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "사용 가능합니다.", Toast.LENGTH_SHORT).show()
+                }
+
+
         }
 
         button_signup.setOnClickListener {
@@ -117,5 +133,37 @@ class join_acticity : AppCompatActivity() {
 //        } else
             return "null"
     }
+
+
+fun idCheck(){
+    //테스트 하려는 디바이스에서 브라우져를 열고
+    //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
+    //안될시 와이파이 설정할것
+    //http://192.168.0.9/kotlinProject/test.json
+    val url = URL("http://192.168.0.100:8383/id_check")
+    val conn = url.openConnection() as HttpURLConnection
+    Log.i("testLog","conn.responseCode:${conn.responseCode}")
+
+    if(conn.responseCode==200){
+        println("=== url.readText() ===")
+        val txt = url.readText()
+        println(txt)
+
+        //XML - DOM-문서전체읽은후
+        //      SAX-문서를 읽으면서
+        //      pull-편리 상수화
+
+        //분석:데이터 파싱
+        //JSON [,,]:Array, {"K":"V", , ,}:Object
+        var id_check = ""
+        val arr = JSONArray(txt)
+        for(i in 0 until arr.length()){
+            val obj: JSONObject = arr.get(i) as JSONObject
+            Log.i("testLog","member_id:${obj["member_id"]}")
+            id_check += "${obj["member_id"]}"
+        }
+    }
+}
+
 
 

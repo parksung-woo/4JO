@@ -9,19 +9,47 @@
 <html>
 <head>
     <title>4조 관리자</title>
+    <link rel="stylesheet" href="asset/css/loginstyle.css" />
 </head>
 <body>
-<div class="admin" style="margin-left: 500px;">
-    <h1>관리자 페이지</h1>
+<div class="wrap">
+    <div class="form-wrap">
+        <div class="managertitle">
+            <h1>SAFE FARM</h1>
+        </div>
+        <div class="social-icons">
+            <img src="asset/css/images/tree.png" />
+            <img src="asset/css/images/pig.png" />
+            <img src="asset/css/images/tree.png" />
+            <img src="asset/css/images/pig.png" />
+        </div>
+        <form action="login" id="login" class="input-group" method="post">
+            <input
+                    type="text"
+                    name="id"
+                    class="input-field"
+                    placeholder="Manager Id"
+                    required
+            />
+            <input
+                    type="password"
+                    name="password"
+                    class="input-field"
+                    placeholder="Enter Password"
+                    required
+            />
+            <button
+                    class="submit"
+                    style="margin-top: 70px;"
+                    href="memberlist.jsp"
+            >
+                Login
+            </button>
+        </form>
+        <div class="companyname">
+            4jo_company abcdefg
+        </div>
+    </div>
 </div>
-<div class="form" style="margin-left: 500px" >
-    <form action="login" method="post" class="register-form">
-        <input type="text" name="id" placeholder="id"/>
-        <input type="password" name="password" placeholder="비밀번호"/>
-        <input type="submit" value="로그인"/>
-    </form>
-</div>
-
 </body>
 </html>
-

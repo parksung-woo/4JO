@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:text="temperature"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView6"
+                    app:layout_constraintBottom_toTopOf="@+id/id_temperature"
                     app:layout_constraintEnd_toEndOf="@+id/imageView2"
                     app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -95,7 +95,7 @@
                     app:layout_constraintVertical_chainStyle="packed" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/id_temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -261,6 +261,7 @@
                     android:src="@drawable/humidity" />
 
                     <TextView
+                        android:id="@+id/id_humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="65%"

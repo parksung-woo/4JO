@@ -13,6 +13,13 @@
         DESC LIMIT 1;
     </select>
 
+    <select id="selectOndoList" resultType="map">
+        SELECT temperature, humidity, nowDatetime
+        FROM ondo_4JO
+        ORDER BY nowDatetime
+        DESC LIMIT 10;
+    </select>
+
     <insert id="insertOndo" parameterType="com.web.service.model.OndoDTO">
         INSERT INTO ondo_4JO(temperature, humidity, nowDatetime)
         VALUES(#{temperature}, #{humidity}, #{nowDatetime})

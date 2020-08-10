@@ -21,6 +21,7 @@ public class LoginService {
         log.info("안드로이드에서 들어온 값 :" + member_id);
         log.info("안드로이드에서 들어온 값 :" + member_password);
         log.info("로그인 정보 : " + memberRepository.login(memberDTO));
+
         if(memberRepository.login(memberDTO) == null){
             loginsuccess = "0";
         }else if(memberRepository.login(memberDTO)     !=null){

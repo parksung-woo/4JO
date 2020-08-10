@@ -25,10 +25,15 @@ public class OndoService {
         return OndoRepository.selectOndo();
     }
 
+    public List<Map<String, Object>> selectOndoList() {
+        return OndoRepository.selectOndoList();
+    }
+
     // 라즈베리에서 온 정보를 db저장
     public void insertOndo(OndoDTO ondoDTO) {
         OndoRepository.insertOndo(ondoDTO);
     }
+
 
     public void insertOndo(String temperature, String humidity, String nowDatetime) throws Exception{
 

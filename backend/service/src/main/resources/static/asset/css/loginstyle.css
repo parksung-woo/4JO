@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.managertitle {
+  margin-top: 40px;
+  text-align: center;
+  color: green;
+  font-family: sans-serif;
+}
+.companyname {
+  text-align: center;
+  margin-top: 323px;
+  font-family: 함초롱바탕;
+  color: rgb(133, 134, 133);
+  font-size: small;
+}
+.wrap {
+  height: 100%;
+  width: 100%;
+  background-image: url("images/green.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.form-wrap {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: #e3e6e9;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 2em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+.button-wrap {
+  width: 100px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 600px 9px #fcae8f;
+  border-radius: 30px;
+}
+.togglebtn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  text-align: center;
+}
+.social-icons {
+  margin: 30px auto;
+  text-align: center;
+}
+.social-icons img {
+  width: 30px;
+  cursor: pointer;
+}
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border: none;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+.submit {
+  width: 60%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: green;
+  border: 0;
+  outline: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+}
+span {
+  color: #777;
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+#login {
+  left: 50px;
+}
+#register {
+  left: 450px;
+}
