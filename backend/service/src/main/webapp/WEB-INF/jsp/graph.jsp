@@ -16,23 +16,6 @@
             background-position: center;
             background-size: cover;
             position: absolute;
-            background-image: url("asset/css/images/green.jpg");
-        }
-        .graph_left{
-            width: 70%;
-            height: 120%;
-            float: left;
-            margin-left: 10px;
-            margin-top: 10px;
-            box-sizing: border-box;
-            background: #fafafa;
-            border-radius: 2em;
-        }
-        .graph_img{
-            width: 28%;
-            height: 100%;
-            float: right;
-            margin-top: 100px"
         }
     </style>
 </head>
@@ -57,7 +40,7 @@
     </div>
 </div>
 <div class="graph_img">
-    <img src="./asset/css/images/bob.png"/>
+
 </div>
 </div>
 
