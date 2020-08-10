@@ -15,7 +15,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
-        android:text="John's Farm"
+        android:text="Farm"
         android:textColor="#fff"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -41,6 +41,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview1"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"

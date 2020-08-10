@@ -58,7 +58,6 @@ class catagory_activity : AppCompatActivity() {
             dialog.setMessage("저희 SAFE FARM을 이용해주셔서 감사합니다.")
             dialog.setIcon(R.drawable.icon5)
 
-
             fun toast_p() {
                 Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this,login_activity::class.java)

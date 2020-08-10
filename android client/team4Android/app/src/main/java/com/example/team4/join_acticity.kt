@@ -29,15 +29,26 @@ class join_acticity : AppCompatActivity() {
             infos = tmp?.split("@")
         }
 
-        button3.setOnClickListener{
+        var idCheck: Array<String> = Array(2, { "" })
 
-                var id_check = idCheck()
-                var id_in = edit_id.text.toString()
-                if(id_check.equals(id_in)){
-                    Toast.makeText(this, "아이디가 중복됩니다.", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this, "사용 가능합니다.", Toast.LENGTH_SHORT).show()
+        button3.setOnClickListener {
+            var tmp: String = ""
+            Log.i("testLog", "idCheckClick u:${edit_id.text}")
+            Thread() {
+                tmp = idCheck("${edit_id.text}")
+                runOnUiThread {
+                    if (tmp.equals("사용가능한 ID")) {
+                        Toast.makeText(this, tmp, Toast.LENGTH_SHORT).show()
+                        idCheck[0] = edit_id.text.toString()
+                        idCheck[1] = edit_id.text.toString()
+                        Log.i("testLog", "idCheck : ${idCheck[0]}")
+                    } else {
+                        Toast.makeText(this, tmp, Toast.LENGTH_SHORT).show()
+                        idCheck[0] = "중복된 ID"
+                        idCheck[1] = edit_id.text.toString()
+                    }
                 }
+            }.start()
 
 
         }
@@ -50,14 +61,10 @@ class join_acticity : AppCompatActivity() {
             var success: Boolean = (password.equals(password_confirm))
             // password, password_confirm 이 같으면 success ture
 
-            // null값으로 처리하지 않고 length==0 으로 값이 들어왔는지를 확인
-            if ((id.length == 0) or (password.length == 0) or
-                (password_confirm.length == 0) or (nickname.length == 0)) {
-                    Toast.makeText(
-                        this, "모든 항목을 입력하세요."
-                        , Toast.LENGTH_SHORT
-                    ).show()
-            } else {
+
+            if ((id.length != 0) and (password.length != 0) and
+                (password_confirm.length != 0) and (nickname.length != 0)
+            ) {
                 if (success) {
                     Log.i("`testLog password -> ", password)
                     Log.i("testLog password2 ->", password_confirm)
@@ -66,33 +73,53 @@ class join_acticity : AppCompatActivity() {
                         , Toast.LENGTH_SHORT
                     ).show()
                     val intent = Intent(this, login_activity::class.java) //LIstPageActivity로 이동
-//                  intent.putExtra("id",user_id.text.toString())
-//                  Log.i("testLog user_id -> ", user_id.text.toString())
                     startActivity(intent)
+                    Thread() {
+                        UpdateMainLog(
+                            "${edit_id.text.toString()}",
+                            "${edit_password.text.toString()}",
+                            "${edit_nickname.text.toString()}"
+                        )
+                    }.start()
                 } else {
                     Toast.makeText(
                         this, "비밀번호를 확인하세요."
                         , Toast.LENGTH_SHORT
                     ).show()
-                    }
                 }
-            //            val intent = Intent(this, Login::class.java)
-//            if ("${pwd1.text.toString()}".equals("${pwd2.text.toString()}")) {
-            Thread() {
-                var list: String =
-                    UpdateMainLog(
-                        "${edit_id.text.toString()}",
-                        "${edit_password.text.toString()}",
-                        "${edit_nickname.text.toString()}"
-                    )
-                runOnUiThread {
-                    Log.i("testLog", "loginedededed : ${infos?.get(2).toString()}")
-                }
-            }.start()
-        } // end setOnClickListener
+            } else if (idCheck[0] == "중복된 ID" && idCheck[1] == id) {
+                Toast.makeText(
+                    this, "이미 존재하는 ID입니다."
+                    , Toast.LENGTH_SHORT
+                ).show()
+            } else if (idCheck[0] == "" || idCheck[1] != id) {
+                Toast.makeText(
+                    this, "ID 중복검사를 하지 않았습니다."
+                    , Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    this, "모든 항목을 입력하세요."
+                    , Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        Thread() {
+            var list: String =
+                UpdateMainLog(
+                    "${edit_id.text.toString()}",
+                    "${edit_password.text.toString()}",
+                    "${edit_nickname.text.toString()}"
+                )
+            runOnUiThread {
+                Log.i("testLog", "loginedededed : ${infos?.get(2).toString()}")
+            }
+        }.start()
+     // end setOnClickListener
 
 
-//아이디 정규식
+        //아이디 정규식
         edit_id.filters = arrayOf(InputFilter { source, _, _, _, _, _ ->
             val ps: Pattern =
                 Pattern.compile("^[a-zA-Z0-9가\\u318D\\u119E\\u11A2\\u2022\\u2025a\\u00B7\\uFE55]+$")
@@ -118,7 +145,6 @@ class join_acticity : AppCompatActivity() {
 
 
     }
-    }
     fun UpdateMainLog(member_id:String,member_password:String, member_nickname:String):String{
 //        var se=  URLEncoder.encode(member_nickname, "UTF-8");
         val url = URL("http://192.168.0.100:8383/androidInsert?member_id=${member_id}&member_password=${member_password}" +
@@ -131,39 +157,30 @@ class join_acticity : AppCompatActivity() {
 //            var item = arr*/
 //            return "${txt}"
 //        } else
-            return "null"
+        return "null"
     }
 
 
-fun idCheck(){
-    //테스트 하려는 디바이스에서 브라우져를 열고
-    //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
-    //안될시 와이파이 설정할것
-    //http://192.168.0.9/kotlinProject/test.json
-    val url = URL("http://192.168.0.100:8383/id_check")
-    val conn = url.openConnection() as HttpURLConnection
-    Log.i("testLog","conn.responseCode:${conn.responseCode}")
+    fun idCheck(member_id:String):String{
+        //테스트 하려는 디바이스에서 브라우져를 열고
+        //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
+        //안될시 와이파이 설정할것
+        //http://192.168.0.9/kotlinProject/test.json
+        val url = URL("http://192.168.0.100:8383/idCheck?member_id=${member_id}")
+        val conn = url.openConnection() as HttpURLConnection
+        Log.i("testLog","conn.responseCode:${conn.responseCode}")
 
-    if(conn.responseCode==200){
-        println("=== url.readText() ===")
-        val txt = url.readText()
-        println(txt)
-
-        //XML - DOM-문서전체읽은후
-        //      SAX-문서를 읽으면서
-        //      pull-편리 상수화
-
-        //분석:데이터 파싱
-        //JSON [,,]:Array, {"K":"V", , ,}:Object
-        var id_check = ""
-        val arr = JSONArray(txt)
-        for(i in 0 until arr.length()){
-            val obj: JSONObject = arr.get(i) as JSONObject
-            Log.i("testLog","member_id:${obj["member_id"]}")
-            id_check += "${obj["member_id"]}"
+        if(conn.responseCode==200){
+            println("=== url.readText() ===")
+            val txt = url.readText()
+            println(txt)
+            return "${txt}"
+            }
+        else return "null"
         }
     }
-}
+
+
 
 
 
