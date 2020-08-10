@@ -56,7 +56,8 @@
         }
         img{
             margin-top: 10px;
-            width: 380px;
+            margin-left: 42px;
+            width: 300px;
             height: 250px;
             border-radius: 10px;
 
@@ -88,7 +89,7 @@
             </tr>
         </table>
         <div>
-            <img src="./asset/css/images/bob.png"/>
+            <img src="./asset/css/images/pp.png"/>
         </div>
     </form>
 </div>
