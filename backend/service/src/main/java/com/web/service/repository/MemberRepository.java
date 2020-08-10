@@ -58,5 +58,9 @@ public class MemberRepository {
         return manager.getSession().selectOne("web.service.login", memberDTO);
 
     }
-
+    // 중복
+    public static int idCheck(String member_id){
+        PoolManager manager = PoolManager.getInstance();
+        return manager.getSession().selectOne("web.service.idCheck", member_id);
+    }
 }

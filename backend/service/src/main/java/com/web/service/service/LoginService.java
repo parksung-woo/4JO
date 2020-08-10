@@ -39,4 +39,18 @@ public class LoginService {
         memberRepository.insertMember(login);
 
     }
+    public String idCheck(String member_id) throws Exception {
+        log.info("idCheck 실행");
+        String result = "";
+        int count = memberRepository.idCheck(member_id);
+
+        if(count == 0){
+            result = "사용가능한 ID";
+        }else {
+            result = "중복된 ID";
+        }
+
+
+        return result;
+    }
 }

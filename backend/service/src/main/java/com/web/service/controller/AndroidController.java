@@ -33,10 +33,13 @@ public class AndroidController {
         return log;
     }
     //아이디 중복 체크
-    @GetMapping("id_check")
-    public List<Map<String, Object>> id_check() throws Exception{
-        log.info(String.valueOf(memberService));
-        return memberService.memberList();
+    @GetMapping(value = "/idCheck")
+    public  String idCheck(String member_id) throws Exception{
+        log.info("중복체크 실행");
+        String idCheckResult =
+                loginService.idCheck(member_id);
+
+        return idCheckResult;
     }
 
     //안드로이드 회원가입

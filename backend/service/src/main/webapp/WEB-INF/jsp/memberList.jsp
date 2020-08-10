@@ -38,6 +38,9 @@
         .submit {
             margin-left: 1250px;
         }
+        #graph{
+
+        }
         .form01 {
             padding: 50px;
         }
@@ -87,7 +90,7 @@
                 <h1>safe farm user list</h1>
             </div>
             <button class="submit">
-                <a href="main.jsp">로그아웃</a>
+                <a href="main">로그아웃</a>
             </button>
 
             <div class="left">
@@ -130,8 +133,11 @@
                             </tr>
                         </c:forEach>
                     </table>
+                    <button id="graph">
+                        <a href="http://192.168.0.100:8383/graph">그래프</a>
+                    </button>
                 </form>
-            </div>
+            </div> <%-- 오른쪽 div 끝--%>
 
         </div>
     </body>

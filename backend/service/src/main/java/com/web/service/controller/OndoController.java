@@ -22,12 +22,6 @@ public class OndoController {
     @Setter(onMethod_ = {@Autowired})
     private OndoService ondoService;
 
-    @RequestMapping("/selectOndoList")
-    public List<Map<String, Object>> selectOndoList() throws Exception{
-        log.info("selectOndoList 실행");
-        log.info(String.valueOf(ondoService));
-        return ondoService.selectOndoList();
-    }
 
     //안드로이드로 온습도 값 보냄
     @GetMapping( value = "/ondoPrint" )

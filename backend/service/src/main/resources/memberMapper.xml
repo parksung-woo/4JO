@@ -18,6 +18,11 @@
          WHERE member_id = #{member_id}
     </select>
 
+    <!-- 아이디 중복확인 쿼리-->
+    <select id="idCheck" parameterType= "String" resultType="Int">
+        select count(*) from member_4JO where member_id=#{member_id};
+    </select>
+
     <select id="login" parameterType ="com.web.service.model.MemberDTO"
             resultType="com.web.service.model.MemberDTO">
         select * from member_4JO where member_id = #{member_id} and member_password = #{member_password};
