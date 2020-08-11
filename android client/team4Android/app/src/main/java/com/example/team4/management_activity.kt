@@ -1,6 +1,7 @@
 package com.example.team4
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -25,12 +26,6 @@ class management_activity : AppCompatActivity() {
             ondo()
         }.start()
 
-        //뒤로가기 버튼
-//        button5.setOnClickListener{
-//            val intent = Intent(this, catagory_activity::class.java)
-//            startActivity(intent)
-//        }
-
         switch2.setOnClickListener{
             if(switch2 != null){
                 if (switch2.isChecked){
@@ -54,16 +49,13 @@ class management_activity : AppCompatActivity() {
                     Log.i("test_sensor", sensor)
                 }
             }
-
         }
-
         //그래프버튼
         graphview.setOnClickListener {
-            val intent = Intent(this, graph_activity::class.java)
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.0.100:8383/graph"))
             startActivity(intent)
         }
     }
-
     fun ondo(){
         //테스트 하려는 디바이스에서 브라우져를 열고
         //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
