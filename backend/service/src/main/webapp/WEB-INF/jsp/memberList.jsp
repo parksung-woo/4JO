@@ -14,7 +14,7 @@
     <style>
          body{
             background-image: url("asset/css/images/green.jpg");
-            height: 95%;
+            height: 110%;
             width: 99%;
             background-position: center;
             background-size: cover;
@@ -29,14 +29,21 @@
             width: 350px;
             height: 50px;
             position: center;
-            margin: 6% auto;
+            margin: 4% auto;
             overflow: hidden;
             background: #fafafa;
             border-radius: 2em;
             box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
         .submit {
-            margin-left: 1250px;
+            margin-left: 1050px;
+            background-color: #D2FFD2;
+            border-radius: 1em;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-right:4px;
+            padding-left: 4px;
+
         }
         #graph{
 
@@ -89,6 +96,7 @@
             <div class ="h_main">
                 <h1>safe farm user list</h1>
             </div>
+
             <button class="submit">
                 <a href="main">로그아웃</a>
             </button>
