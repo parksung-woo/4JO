@@ -10,7 +10,7 @@
         SELECT temperature, humidity, nowDatetime
         FROM ondo_4JO
         ORDER BY nowDatetime
-
+        DESC LIMIT 1;
     </select>
 
     <select id="selectOndoList" resultType="map">
