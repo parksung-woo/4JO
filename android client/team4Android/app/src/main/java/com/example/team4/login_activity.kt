@@ -17,8 +17,10 @@ class login_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val login_fail_response = "로그인 결과 : 0"
+        val login_sucess_response = "로그인 결과 : 1"
+
         //로그인 버튼 클릭
-        //아이디랑 비밀번호가 없을 경우 로그인 불가
         button_login.setOnClickListener {
             if ((login_id.length() == 0) or (login_password.length() == 0)) {
                 Toast.makeText(
@@ -35,11 +37,15 @@ class login_activity : AppCompatActivity() {
                     var tmps: List<String> = tmp.split("@")
                     runOnUiThread {
                         Log.i("testLog", "loginclick : ${tmp}")
-                        if ("${tmp}".equals("로그인 결과 : 0")) { //"로그인 결과 : 0" -> backend에서의 응답
+
+                        val login_fail_response = "로그인 결과 : 0"
+                        val login_sucess_response = "로그인 결과 : 1"
+
+                        if ("${tmp}".equals(login_fail_response)) {
                             Log.i("testLog", "로그인실패")
                             Toast.makeText(this, "로그인 실패.", Toast.LENGTH_SHORT).show()
 
-                        } else if ("${tmp}".equals("로그인 결과 : 1")) {
+                        } else if ("${tmp}".equals(login_sucess_response)) {
                             Log.i("testLog", "로그인성공")
                             Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, catagory_activity::class.java)
@@ -59,14 +65,10 @@ class login_activity : AppCompatActivity() {
         //이미지 버튼 클릭시 인사
         imageView8.setOnClickListener {
             Toast.makeText(
-                this, "hi 농부"
-                , Toast.LENGTH_SHORT
-            ).show()
+                this, "hi 농부", Toast.LENGTH_SHORT).show()
         }
 
     }
-
-
 
     fun UpdateMainLog1(member_id:String,member_password:String):String{
         val url = URL("http://192.168.0.100:8383/androidLogin?member_id=${member_id}&member_password=${member_password}")
@@ -74,8 +76,6 @@ class login_activity : AppCompatActivity() {
         Log.i("testLog", "conn.responseCode : ${conn.responseCode}")
         if(conn.responseCode == 200){
             val txt = url.readText()
-            /*val arr = JSONArray(txt)
-            var item = arr*/
             return "${txt}"
         } else return "null"
     }
