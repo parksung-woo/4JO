@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class PoolManager {
+
     private static PoolManager instance;
     InputStream inputStream;
     SqlSessionFactory sqlSessionFactory;
@@ -22,6 +23,7 @@ public class PoolManager {
             e.printStackTrace();
         }
     }
+
     public static PoolManager getInstance() {
         if (instance == null) {//instance가 null일떄만 객체 생성
             instance = new PoolManager();
@@ -31,7 +33,7 @@ public class PoolManager {
 
     // mybatis는 default commit 옵션이 false 이므로,
     // 쿼리문 수행 후 commit 해야한다.
-    //매번 생성
+    // 매번 생성
     public SqlSession getSession() {
         SqlSession session = null;
         session = sqlSessionFactory.openSession();
