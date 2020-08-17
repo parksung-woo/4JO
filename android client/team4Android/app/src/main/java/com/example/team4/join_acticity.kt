@@ -30,6 +30,8 @@ class join_acticity : AppCompatActivity() {
         }
 
         var idCheck: Array<String> = Array(2, { "" })
+        val idcheck_fail_response = "중복된 ID"
+        val idcheck_sucess_response = "사용가능한 ID"
 
         button3.setOnClickListener {
             var tmp: String = ""
@@ -37,20 +39,18 @@ class join_acticity : AppCompatActivity() {
             Thread() {
                 tmp = idCheck("${edit_id.text}")
                 runOnUiThread {
-                    if (tmp.equals("사용가능한 ID")) {
+                    if (tmp.equals(idcheck_sucess_response)) {
                         Toast.makeText(this, tmp, Toast.LENGTH_SHORT).show()
                         idCheck[0] = edit_id.text.toString()
                         idCheck[1] = edit_id.text.toString()
                         Log.i("testLog", "idCheck : ${idCheck[0]}")
                     } else {
                         Toast.makeText(this, tmp, Toast.LENGTH_SHORT).show()
-                        idCheck[0] = "중복된 ID"
+                        idCheck[0] = idcheck_fail_response
                         idCheck[1] = edit_id.text.toString()
                     }
                 }
             }.start()
-
-
         }
 
         button_signup.setOnClickListener {
@@ -59,8 +59,6 @@ class join_acticity : AppCompatActivity() {
             val password_confirm: String = edit_password_confirm.text.toString()
             val nickname: String = edit_nickname.text.toString()
             var success: Boolean = (password.equals(password_confirm))
-            // password, password_confirm 이 같으면 success ture
-
 
             if ((id.length != 0) and (password.length != 0) and
                 (password_confirm.length != 0) and (nickname.length != 0)
@@ -68,10 +66,7 @@ class join_acticity : AppCompatActivity() {
                 if (success) {
                     Log.i("`testLog password -> ", password)
                     Log.i("testLog password2 ->", password_confirm)
-                    Toast.makeText(
-                        this, "회원가입을 성공했습니다."
-                        , Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "회원가입을 성공했습니다.", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, login_activity::class.java) //LIstPageActivity로 이동
                     startActivity(intent)
                     Thread() {
@@ -82,26 +77,14 @@ class join_acticity : AppCompatActivity() {
                         )
                     }.start()
                 } else {
-                    Toast.makeText(
-                        this, "비밀번호를 확인하세요."
-                        , Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show()
                 }
-            } else if (idCheck[0] == "중복된 ID" && idCheck[1] == id) {
-                Toast.makeText(
-                    this, "이미 존재하는 ID입니다."
-                    , Toast.LENGTH_SHORT
-                ).show()
+            } else if (idCheck[0] == idcheck_fail_response && idCheck[1] == id) {
+                Toast.makeText(this, "이미 존재하는 ID입니다.", Toast.LENGTH_SHORT).show()
             } else if (idCheck[0] == "" || idCheck[1] != id) {
-                Toast.makeText(
-                    this, "ID 중복검사를 하지 않았습니다."
-                    , Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "ID 중복검사를 하지 않았습니다.", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(
-                    this, "모든 항목을 입력하세요."
-                    , Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -116,10 +99,10 @@ class join_acticity : AppCompatActivity() {
                 Log.i("testLog", "loginedededed : ${infos?.get(2).toString()}")
             }
         }.start()
-     // end setOnClickListener
 
-
-        //아이디 정규식
+        //아이디 정규식 (영문,숫자만 입력가능한 정규식)
+        // ex) gasan123 -> Ture
+        // ex) 가산123 -> False
         edit_id.filters = arrayOf(InputFilter { source, _, _, _, _, _ ->
             val ps: Pattern =
                 Pattern.compile("^[a-zA-Z0-9가\\u318D\\u119E\\u11A2\\u2022\\u2025a\\u00B7\\uFE55]+$")
@@ -131,7 +114,9 @@ class join_acticity : AppCompatActivity() {
         }, InputFilter.LengthFilter(10))
 
 
-        //닉네임 정규식
+        //닉네임 정규식 (한글만 입력가능한 정규식)
+        // ex) 가산 -> Ture
+        // ex) gasan123 -> False
         edit_nickname.filters = arrayOf(InputFilter { source, _, _, _, _, _ ->
             val ps: Pattern =
                 Pattern.compile("^[9가-힣ㄱ-ㅎㅏ-ㅣ\\u318D\\u119E\\u11A2\\u2022\\u2025a\\u00B7\\uFE55]+$")
@@ -143,29 +128,17 @@ class join_acticity : AppCompatActivity() {
         }, InputFilter.LengthFilter(3))
 
 
-
     }
     fun UpdateMainLog(member_id:String,member_password:String, member_nickname:String):String{
-//        var se=  URLEncoder.encode(member_nickname, "UTF-8");
         val url = URL("http://192.168.0.100:8383/androidInsert?member_id=${member_id}&member_password=${member_password}" +
                 "&member_nickname=${member_nickname}")
         val conn = url.openConnection() as HttpURLConnection // casting
         Log.i("testLog", "conn.responseCode : ${conn.responseCode}")
-//        if(conn.responseCode == 200){
-//            val txt = url.readText()
-//            /*val arr = JSONArray(txt)
-//            var item = arr*/
-//            return "${txt}"
-//        } else
         return "null"
     }
 
 
     fun idCheck(member_id:String):String{
-        //테스트 하려는 디바이스에서 브라우져를 열고
-        //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
-        //안될시 와이파이 설정할것
-        //http://192.168.0.9/kotlinProject/test.json
         val url = URL("http://192.168.0.100:8383/idCheck?member_id=${member_id}")
         val conn = url.openConnection() as HttpURLConnection
         Log.i("testLog","conn.responseCode:${conn.responseCode}")
@@ -178,6 +151,10 @@ class join_acticity : AppCompatActivity() {
             }
         else return "null"
         }
+        //테스트 하려는 디바이스에서 브라우져를 열고
+        //http://192.168.0.9/kotlinProject 주소 접속유무를 확인
+        //안될시 와이파이 설정할것
+        //http://192.168.0.9/kotlinProject/test.json
     }
 
 
